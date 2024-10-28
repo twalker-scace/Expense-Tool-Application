@@ -22,7 +22,6 @@ const ExpenseList: React.FC<{ updateFlag: boolean }> = ({ updateFlag }) => {
   const getExpenseList = async (newPage: number) => {
     try {
       const response = await getExpenses(newPage, 10);
-      console.log(response);
       setExpenses(response.items);
       setPageIndex(response.pageIndex);
       setTotalPages(response.totalPages);
