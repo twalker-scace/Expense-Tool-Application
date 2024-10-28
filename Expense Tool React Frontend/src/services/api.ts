@@ -12,8 +12,8 @@ switch (window.location.hostname.toLowerCase()) {
     break;
 }
 
-export const getExpenses = async (): Promise<ExpenseListDto> => {
-  const response = await axios.get<ExpenseListDto>(`/expenses`);
+export const getExpenses = async (pageIndex: number = 1, itemsPerPage: number = 10): Promise<ExpenseListDto> => {
+  const response = await axios.get<ExpenseListDto>(`/expenses?pageIndex=${pageIndex}&itemsPerPage=${itemsPerPage}`);
   return response.data;
 };
 
